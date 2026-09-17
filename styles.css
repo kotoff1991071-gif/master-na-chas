@@ -321,15 +321,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 15px;
 }
 .request-points li::before {
-  content: "";
+  content: "✓";
   position: absolute;
   left: 0;
-  top: 6px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
   background: var(--accent-soft);
-  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
 }
 
 .request-form { display: flex; flex-direction: column; gap: 18px; }
