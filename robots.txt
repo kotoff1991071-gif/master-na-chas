@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kotoff1991071-gif.github.io/master-na-chas/sitemap.xml
