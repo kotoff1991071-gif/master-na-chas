@@ -116,6 +116,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-small { padding: 10px 20px; font-size: 14px; }
 .btn-large { padding: 16px 30px; font-size: 16px; }
 .btn-block { width: 100%; }
+.btn-icon svg { flex-shrink: 0; }
+
+.request-telegram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+.request-telegram:hover { color: var(--accent-hover); }
 
 /* Hero */
 .hero {
