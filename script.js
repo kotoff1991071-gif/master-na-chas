@@ -33,6 +33,26 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 // Request form submission
 const form = document.getElementById("request-form");
 const statusEl = document.getElementById("form-status");
+const successModal = document.getElementById("success-modal");
+const modalCloseBtn = document.getElementById("modal-close");
+
+function openModal() {
+  successModal.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  successModal.hidden = true;
+  document.body.style.overflow = "";
+}
+
+modalCloseBtn.addEventListener("click", closeModal);
+successModal.addEventListener("click", (event) => {
+  if (event.target === successModal) closeModal();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !successModal.hidden) closeModal();
+});
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -57,9 +77,8 @@ form.addEventListener("submit", async (event) => {
     });
 
     if (response.ok) {
-      statusEl.textContent = "Спасибо! Заявка отправлена, перезвоним в течение 15 минут.";
-      statusEl.classList.add("success");
       form.reset();
+      openModal();
     } else {
       throw new Error("Request failed");
     }

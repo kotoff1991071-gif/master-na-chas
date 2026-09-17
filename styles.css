@@ -359,6 +359,54 @@ ul { margin: 0; padding: 0; list-style: none; }
 .form-status.success { color: #3ddc84; }
 .form-status.error { color: #ff5a5a; }
 
+/* Success modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 6, 7, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  animation: modal-in 0.2s ease;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.modal-card h3 { margin: 0 0 10px; font-size: 21px; }
+.modal-card p { margin: 0 0 24px; color: var(--text-muted); font-size: 15px; }
+
 /* Pricing */
 .pricing-card { position: relative; display: flex; flex-direction: column; }
 .pricing-card h3 { margin: 0 0 8px; font-size: 20px; }
